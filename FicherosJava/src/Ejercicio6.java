@@ -1,15 +1,15 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Ejercicio6 {
     static Scanner teclado = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        BufferedReader lector = new BufferedReader(new FileReader("src/main/resources/datos.txt"));
+        buscarPalabra(lector);
+    }
 
+    public static void buscarPalabra(BufferedReader lector) {
         try {
-
-            BufferedReader lector = new BufferedReader(new FileReader("src/main/resources/datos.txt"));
             String linea;
 
             System.out.println("Que palabra quieres buscar");
@@ -32,7 +32,6 @@ public class Ejercicio6 {
             System.out.println(e.getStackTrace());
             throw new RuntimeException(e);
         }
-
     }
 
 }
